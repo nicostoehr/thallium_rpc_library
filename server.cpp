@@ -81,32 +81,6 @@ void remote_stat(const tl::request& req, std::string &file_name) {
     req.respond(ret_struct);
 }
 
-/*
-void remote_pwrite(const tl::request& req, int fd, std::string to_write, size_t count, off_t offset) {
-    //int is_open = fcntl(fd, F_GETFD);
-    const void* buf =  reinterpret_cast<const void*>(to_write.c_str());
-    int ret = pwrite(fd,buf,count,offset);
-    if (ret == -1){
-        perror("pwrite");
-    }
-    req.respond(ret);
-}
-*/
-
-
-/*
-void remote_pread(const tl::request& req, int fd, size_t count, off_t offset) {
-    //int is_open = fcntl(fd, F_GETFD);
-    char* buf;
-    int ret = pread(fd,&buf,count,offset);
-    //if (ret == -1){
-    //    perror("pwrite");
-    //}
-    std::string ret_str = buf;
-    req.respond(ret);
-}
-*/
-
 int main() {
  
     tl::engine myEngine(read_conf(), THALLIUM_SERVER_MODE);
